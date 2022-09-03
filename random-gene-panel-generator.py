@@ -28,6 +28,7 @@ print("File read")
 print ("Creating dictionary...")
 
 gene_dictionary = {}
+gtf_header = ""
 
 for line in homo_sapiens_gtf:
     line = line.replace("\n", "")
@@ -38,6 +39,9 @@ for line in homo_sapiens_gtf:
             gene_dictionary[gene_id].append(line)
         else:
             gene_dictionary[gene_id] = [line]
+    else:
+        gtf_header = gtf_header + line + "\n"
+
 del homo_sapiens_gtf #free some memory
 
 print("Dictionary created")
@@ -46,3 +50,10 @@ print("Dictionary created")
 print("\n- - - random gene panel - - -\n")
 random_genes = random.sample(list(gene_dictionary.keys()), gene_panel_dimension)
 print(random_genes)
+
+gtf_output = open("gene_panel.gtf", "w")
+gtf_output.write(gtf_header)
+for gene in random_genes:
+    for line in gene_dictionary[gene]:
+        gtf_output.write(str(line) + "\n")
+gtf_output.close()
