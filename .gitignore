@@ -1,3 +1,4 @@
 resources/homo-sapiens-gtf/Homo_sapiens.**
 resources/homo-sapiens-gtf/CHECKSUMS
 resources/homo-sapiens-gtf/README
+__pycache__/**
