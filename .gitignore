@@ -1,5 +1,8 @@
 resources/homo-sapiens-gtf/Homo_sapiens.**
 resources/homo-sapiens-fasta/Homo_sapiens.**
+resources/homo-sapiens-fasta/genome.**
 resources/homo-sapiens-gtf/CHECKSUMS
 resources/homo-sapiens-gtf/README
-__pycache__/**
+samtools/**
+gffread/**
+sources/__pycache__/**

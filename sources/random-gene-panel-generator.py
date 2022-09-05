@@ -5,7 +5,7 @@ from time import sleep
 import random
 from GtfEntry import GtfEntry
 
-homo_sapiens_gtf_path = "resources/homo-sapiens-gtf/Homo_sapiens.GRCh38.107.gtf" #gene file name
+homo_sapiens_gtf_path = "../resources/homo-sapiens-gtf/Homo_sapiens.GRCh38.107.gtf" #gene file name
 gene_panel_dimension = 100 #number of genes to randomly select
 
 #if the file does not exist, suggest solution and exit the script
