@@ -16,8 +16,16 @@ class GtfEntry:
         if(len(gtf_values) == 9):
             self.attributes = gtf_values[8].split(";")
     
-    def get_gene_id(self):
+    def has_attribute(self, attribute_string):
         if(self.attributes != None):
             for attribute in self.attributes:
-                if "gene_id" in attribute:
-                    return attribute.split(" ")[1][1:][:-1]
+                if attribute_string in attribute:
+                    return True
+        return False
+
+    def get_attribute(self, attribute_string):
+        if(self.attributes != None):
+            for attribute in self.attributes:
+                if attribute_string in attribute:
+                    return attribute.strip().split(" ")[1][1:][:-1]
+        return None
