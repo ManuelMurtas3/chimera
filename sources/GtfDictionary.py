@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import os.path
-from time import sleep
 from GtfEntry import GtfEntry
 
 #I want to change this function so that only one line at a time gets read so that we don't have to use double the memory to store the

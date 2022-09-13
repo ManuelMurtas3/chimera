@@ -7,8 +7,8 @@ class GtfEntry:
         self.seqname = gtf_values[0]
         self.source = gtf_values[1]
         self.feature = gtf_values[2]
-        self.start = gtf_values[3]
-        self.end = gtf_values[4]
+        self.start = int(gtf_values[3])
+        self.end = int(gtf_values[4])
         self.score = gtf_values[5]
         self.strand = gtf_values[6]
         self.frame = gtf_values[7]
