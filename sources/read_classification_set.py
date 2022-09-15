@@ -36,7 +36,7 @@ del fasta_transcripts
 del gene_dictionary
 del gene_panel_keys
 
-kmer_size = 5
+kmer_size = 50
 dictionary_filter = {}
 
 print("Creating filter dictionary...")
@@ -46,9 +46,10 @@ for transcript in transcripts:
 	for i in range(0, transcript_length - kmer_size + 1):
 		kmer = transcript.fasta_content[i : i + 5]
 		if(kmer in dictionary_filter.keys()):
-			dictionary_filter[kmer].append(transcript.gene_id)
+			dictionary_filter[kmer].add(transcript.gene_id)
 		else:
-			dictionary_filter[kmer] = [transcript.gene_id]
+			dictionary_filter[kmer] = set()
+			dictionary_filter[kmer].add(transcript.gene_id)
 
 print("Filter dictionary created")
 
@@ -68,7 +69,7 @@ del reads_content
 
 print("Creating read classification profile...")
 
-classification = open("../resources/gene-panel/classification.list.count", "w")
+classification = open("../resources/gene-panel/classification.set.count", "w")
 
 for read_id in read_transcripts.keys():
 	read_length = len(read_transcripts[read_id])
@@ -84,9 +85,3 @@ for read_id in read_transcripts.keys():
 
 classification.close()
 print("Classification profile created")
-
-#for read_id in read_dictionary.keys():
-#	print(read_id + ":")
-#	for gene in read_dictionary[read_id]:
-#		print("\t" + gene)
-#	print()

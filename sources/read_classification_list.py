@@ -84,9 +84,3 @@ for read_id in read_transcripts.keys():
 
 classification.close()
 print("Classification profile created")
-
-#for read_id in read_dictionary.keys():
-#	print(read_id + ":")
-#	for gene in read_dictionary[read_id]:
-#		print("\t" + gene)
-#	print()

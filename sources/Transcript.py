@@ -9,7 +9,7 @@ class Transcript:
         self.fasta_content = fasta_content
         self.step_size = 80
     
-    def to_str(self):
+    def to_str(self, read_id):
         output = ">" + self.gene_id + "\t" + self.transcript_id + "\t" + str(self.start) + "\t" + str(self.end)
         output = output + "\t" + self.strand + "\t" + str(self.error) + "\n"
         
@@ -18,7 +18,7 @@ class Transcript:
             output = output + "\n".join(output_fasta) #might be a problem if the fasta is under 80 characters
         else:
             output = output + self.fasta_content + "\n"
-        return output + "\n"
+        return "@" + read_id + "\t" + output + "\n"
 
 
 class ChimericTranscript(Transcript):
@@ -32,9 +32,9 @@ class ChimericTranscript(Transcript):
         self.bp = int(bp)
         #bp = breakpoint
     
-    def to_str(self):
+    def to_str(self, read_id):
         output = ">" + self.gene_id + "\t" + self.transcript_id + "\t" + str(self.start) + "\t" + str(self.end)
-        output = output + "\t" + self.strand + "\t" + str(self.error) + " +++ "
+        output = output + "\t" + self.strand + "\t" + str(self.error) + " | "
 
         output = output + ">" + self.gene_id2 + "\t" + self.transcript_id2 + "\t" + str(self.start2) + "\t" + str(self.end2)
         output = output + "\t" + self.strand2 + "\t" + str(self.error) + "\n"
@@ -44,4 +44,4 @@ class ChimericTranscript(Transcript):
             output = output + "\n".join(output_fasta)
         else:
             output = output + self.fasta_content + "\n"
-        return output + "\n"
+        return "@" + read_id + "\t" + output + "\n"
