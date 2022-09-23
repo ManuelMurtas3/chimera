@@ -36,7 +36,7 @@ del fasta_transcripts
 del gene_dictionary
 del gene_panel_keys
 
-kmer_size = 50
+kmer_size = 20
 dictionary_filter = {}
 
 print("Creating filter dictionary...")
