@@ -58,9 +58,11 @@ reads_content = reads.readlines()
 reads.close()
 read_transcripts = {}
 current_read = ""
+headers = {}
 for line in reads_content:
 	if(line[0] == "@"):
 		current_read = line.strip().split("\t")[0]
+		headers[current_read] = "\t".join(line.strip().split("\t")[1:])
 		read_transcripts[current_read] = ""
 	else:
 		read_transcripts[current_read] = str(read_transcripts[current_read]) + line.strip()
@@ -73,7 +75,7 @@ classification = open("../resources/gene-panel/classification.count", "w")
 
 classification.write("Classification profile (k = " + str(kmer_size) + ")\n")
 for read_id in read_transcripts.keys():
-	classification.write(read_id + "\n")
+	classification.write(read_id + "\t" + headers[read_id] + "\n")
 	read_length = len(read_transcripts[read_id])
 	for i in range(0, read_length - kmer_size + 1):
 		kmer = read_transcripts[read_id][i : i + 5]
