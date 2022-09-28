@@ -53,7 +53,7 @@ while len(transcripts) > 1:
 		transcript2 = random.choice(transcripts)
 		transcripts.remove(transcript2)
 		bp = round((read_size / 100) * random.randint(bp_range[0], bp_range[1]))
-		if transcript1.end >= bp and transcript2.end >= read_size - bp:
+		if transcript1.end >= bp and transcript2.end >= read_size - bp and transcript1.gene_id != transcript2.gene_id:
 			#random start for transcript 1
 			transcript1_start = random.randint(0, transcript1.end - bp)
 			print(str(transcript1.start) + " -> " + str(transcript1_start) + " -> " + 
