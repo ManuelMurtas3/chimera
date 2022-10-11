@@ -1,0 +1,79 @@
+
+V1
+
+Number of reads: 530
+Number of matches over total: 443 (83.58%)
+Number of mismatches over total: 87 (16.42%)
+
+--- chimeric data ---
+
+Number of chimeric reads: 241
+Number of correctly assigned chimeric reads over chimeric reads: 17 (7.05%)
+Number of incorrectly assigned chimeric reads over chimeric reads: 1 (0.41%)
+Number of assignable chimeric reads over chimeric reads: 199 (82.57%)
+Number of unassigned chimeric reads over chimeric reads: 24 (9.96%)
+Number of identified chimeric reads over chimeric reads: 241 (100.00%)
+Number of unidentified chimeric reads over chimeric reads: 0 (0.00%)
+
+--- non chimeric data ---
+
+Number of non chimeric reads: 289
+Number of correctly assigned non chimeric reads over non chimeric reads: 90 (31.14%)
+Number of incorrectly assigned non chimeric reads over non chimeric reads: 0 (0.00%)
+Number of assignable non chimeric reads over non chimeric reads: 112 (38.75%)
+Number of unassigned non chimeric reads over non chimeric reads: 0 (0.00%)
+Number of identified non chimeric reads over non chimeric reads: 202 (69.90%)
+Number of unidentified non chimeric reads over non chimeric reads: 87 (30.10%)
+
+V2
+
+Number of reads: 530
+Number of matches over total: 443 (83.58%)
+Number of mismatches over total: 87 (16.42%)
+
+--- chimeric data ---
+
+Number of chimeric reads: 241
+Number of correctly assigned chimeric reads over chimeric reads: 86 (35.68%)
+Number of incorrectly assigned chimeric reads over chimeric reads: 1 (0.41%)
+Number of assignable chimeric reads over chimeric reads: 130 (53.94%)
+Number of unassigned chimeric reads over chimeric reads: 24 (9.96%)
+Number of identified chimeric reads over chimeric reads: 241 (100.00%)
+Number of unidentified chimeric reads over chimeric reads: 0 (0.00%)
+
+--- non chimeric data ---
+
+Number of non chimeric reads: 289
+Number of correctly assigned non chimeric reads over non chimeric reads: 90 (31.14%)
+Number of incorrectly assigned non chimeric reads over non chimeric reads: 0 (0.00%)
+Number of assignable non chimeric reads over non chimeric reads: 112 (38.75%)
+Number of unassigned non chimeric reads over non chimeric reads: 0 (0.00%)
+Number of identified non chimeric reads over non chimeric reads: 202 (69.90%)
+Number of unidentified non chimeric reads over non chimeric reads: 87 (30.10%)
+
+V3
+
+Number of reads: 530
+Number of matches over total: 443 (83.58%)
+Number of mismatches over total: 87 (16.42%)
+
+--- chimeric data ---
+
+Number of chimeric reads: 241
+Number of correctly assigned chimeric reads over chimeric reads: 204 (84.65%)
+Number of incorrectly assigned chimeric reads over chimeric reads: 1 (0.41%)
+Number of assignable chimeric reads over chimeric reads: 12 (4.98%)
+Number of unassigned chimeric reads over chimeric reads: 24 (9.96%)
+Number of identified chimeric reads over chimeric reads: 241 (100.00%)
+Number of unidentified chimeric reads over chimeric reads: 0 (0.00%)
+
+--- non chimeric data ---
+
+Number of non chimeric reads: 289
+Number of correctly assigned non chimeric reads over non chimeric reads: 90 (31.14%)
+Number of incorrectly assigned non chimeric reads over non chimeric reads: 0 (0.00%)
+Number of assignable non chimeric reads over non chimeric reads: 112 (38.75%)
+Number of unassigned non chimeric reads over non chimeric reads: 0 (0.00%)
+Number of identified non chimeric reads over non chimeric reads: 202 (69.90%)
+Number of unidentified non chimeric reads over non chimeric reads: 87 (30.10%)
+

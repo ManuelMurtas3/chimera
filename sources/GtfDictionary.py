@@ -9,15 +9,9 @@ def gtf_to_dictionary(gtf_file_path, dictionary_id):
         print("The gtf file " + gtf_file_path + " does not exist.")
         return None
     
-    print("Reading " + gtf_file_path + "...")
-
     gtf_file = open(gtf_file_path, "r")
     gtf_content = gtf_file.readlines()
     gtf_file.close()
-
-    print("File read")
-    print ("Creating dictionary...")
-
     gtf_dictionary = {}
     gtf_header = ""
 
@@ -37,9 +31,6 @@ def gtf_to_dictionary(gtf_file_path, dictionary_id):
     gtf_dictionary["gtf_header"] = gtf_header
 
     del gtf_content #free some memory
-
-    print("Dictionary created")
-
     return gtf_dictionary
 
 def dictionary_to_gtf(dictionary, gtf_file_path):
