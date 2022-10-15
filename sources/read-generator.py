@@ -31,10 +31,10 @@ for id, fasta in fasta_transcripts.items():
 			transcripts.append(transcript)
 			break
 
-test_output = open("../resources/gene-panel/random_reads.fa", "w")
+reads_output = open("../resources/gene-panel/random_reads.fa", "w")
 #for transcript in transcripts:
-#	test_output.write(transcript.to_str() + "\n")
-#test_output.close()
+#	reads_output.write(transcript.to_str() + "\n")
+#reads_output.close()
 
 read_size = 150
 
@@ -47,7 +47,7 @@ read_counter = 0
 while len(transcripts) > 1:
 	transcript1 = random.choice(transcripts)
 	transcripts.remove(transcript1)
-	if transcript1.end >= 150:
+	if transcript1.end >= read_size:
 		read_counter = read_counter + 1
 		read_id = "R" + str(read_counter)
 		
@@ -74,16 +74,16 @@ while len(transcripts) > 1:
 				chimeric_transcript.start2 = transcript2_start
 				chimeric_transcript.end2 = transcript2_start + (read_size - bp) - 1
 				
-				test_output.write(chimeric_transcript.to_str(read_id) + "\n")
+				reads_output.write(chimeric_transcript.to_str(read_id) + "\n")
 			else:
 				if transcript1.end > read_size:
 					transcript1.fasta_content = transcript1.fasta_content[:read_size]
-				test_output.write(transcript1.to_str(read_id[:-1]) + "\n")
+				reads_output.write(transcript1.to_str(read_id[:-1]) + "\n")
 				read_counter = read_counter + 1
 				read_id = "R" + str(read_counter)
 				if transcript2.end > read_size:
 					transcript2.fasta_content = transcript1.fasta_content[:read_size]
-				test_output.write(transcript2.to_str(read_id) + "\n")
+				reads_output.write(transcript2.to_str(read_id) + "\n")
 				#CHANGE THIS IN NEW BP CALCULATION
 
 		else:
@@ -92,7 +92,7 @@ while len(transcripts) > 1:
 				transcript1.start = start
 				transcript1.end = start + read_size
 				transcript1.fasta_content = transcript1.fasta_content[transcript1.start : transcript1.end]
-			test_output.write(transcript1.to_str(read_id) + "\n")
+			reads_output.write(transcript1.to_str(read_id) + "\n")
 
 if len(transcripts) == 1:
 	read_counter = read_counter + 1
@@ -103,8 +103,8 @@ if len(transcripts) == 1:
 		transcript.start = start
 		transcript.end = start + read_size
 	transcript.fasta_content = transcript.fasta_content[transcript.start : transcript.end]
-	test_output.write(transcript.to_str(read_id) + "\n")
+	reads_output.write(transcript.to_str(read_id) + "\n")
 
-test_output.close()
+reads_output.close()
 
 print("Random reads generated")

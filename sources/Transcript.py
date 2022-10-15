@@ -15,7 +15,7 @@ class Transcript:
         
         if(len(self.fasta_content) > self.step_size):
             output_fasta = [self.fasta_content[x : x+self.step_size] for x in range(0, (len(self.fasta_content) // self.step_size + 1) * self.step_size, self.step_size)]
-            output = output + "\n".join(output_fasta) #might be a problem if the fasta is under 80 characters
+            output = output + "\n".join(output_fasta)
         else:
             output = output + self.fasta_content + "\n"
         return ">@" + read_id + "\t" + output
